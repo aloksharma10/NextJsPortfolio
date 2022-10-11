@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import React from 'react'
 
 function Notes() {
@@ -9,7 +8,7 @@ function Notes() {
       <div className="p-6 flex justify-center">
         <div className="w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md">
           <div className="flex flex-col items-center p-6 ">
-            <Image  width={100} height={100} className="mb-3  rounded-full shadow-lg" src="/alok.jpg" alt=""/>
+            <img  width={100} className="mb-3  rounded-full shadow-lg" src="/alok.jpg" alt=""/>
               <h5 className="mb-1 text-xl font-medium text-gray-900 ">C Notes</h5>
               <span className="text-sm text-gray-500 ">Download Notes Here</span>
               <div className="grid  mt-4  ">

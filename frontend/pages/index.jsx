@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { BsWhatsapp } from 'react-icons/bs';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { AiOutlineGithub, AiFillTwitterCircle } from 'react-icons/ai';
@@ -28,7 +27,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hidden md:block md:w-1/2 relative"  style={{ clipPath: "polygon(12% 0px, 100% 0%, 100% 100%, 0px 100%)" }}>
-          <Image src={'/hero.jpg'} layout="fill" alt='' />
+          <img src={'/hero.jpg'} alt='' />
         </div>
       </div>
       {/* About us */}
@@ -97,7 +96,7 @@ export default function Home() {
           <div className="lg:p-4 md:w-1/3 flex justify-center mb-3">
             <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg">
               <span className='border-box inline-block overflow-hidden'>
-                <Image src={'/alok.jpg'} width={400} height={300} alt='' />
+                <img src={'/alok.jpg'} alt='' />
               </span>
               <span className='border-box inline-block overflow-hidden ' >
               </span>
@@ -117,7 +116,7 @@ export default function Home() {
           <div className="lg:p-4 md:w-1/3 flex justify-center mb-3">
             <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg">
               <span className='border-box inline-block overflow-hidden'>
-                <Image src={'/alok.jpg'} width={400} height={300} alt='' />
+                <img src={'/alok.jpg'} alt='' />
               </span>
               <span className='border-box inline-block overflow-hidden ' >
               </span>
@@ -137,7 +136,7 @@ export default function Home() {
           <div className="lg:p-4 md:w-1/3 flex justify-center mb-3">
             <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg">
               <span className='border-box inline-block overflow-hidden'>
-                <Image src={'/alok.jpg'} width={400} height={300} alt='' />
+                <img src={'/alok.jpg'}  alt='' />
               </span>
               <span className='border-box inline-block overflow-hidden ' >
               </span>

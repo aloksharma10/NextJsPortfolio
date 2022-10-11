@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { BsWhatsapp } from 'react-icons/bs';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { AiOutlineGithub, AiFillTwitterCircle } from 'react-icons/ai';
-import Image from 'next/image';
 import Head from 'next/head';
 
 function Contact() {
@@ -14,7 +13,7 @@ function Contact() {
       <div className='text-center m-auto'>
         <div className='text-2xl md:text-4xl font-bold'>Feel free to contact us</div>
         <div className='py-3'>
-          <Image src="/contact.jpg" width={150} height={150} className="mx-auto my-5 rounded-full" alt="" />
+          <img src="/contact.jpg" width={150} className="mx-auto my-5 rounded-full" alt="" />
         </div>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start mx-auto">
           <Link href={'https://wa.me/917011609262'}>
