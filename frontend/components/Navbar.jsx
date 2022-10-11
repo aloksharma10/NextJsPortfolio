@@ -1,84 +1,74 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
-
+import { AiFillCaretUp, AiFillCaretDown } from 'react-icons/ai';
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [nav, setNav] = useState("hidden")
+  const toggleNav = () => {
+    if (nav == "hidden") {
+      setNav("block")
+    }
+    else {
+      setNav("hidden")
+    }
+  }
   return (
-    <div>
-      <nav className=" fixed z-20 bg-white w-full">
-        <div className="w-full">
-          <div className="flex items-center h-20 w-full ">
-            <div className="flex items-center  sm:mx-10 md:mx-20 justify-between w-full">
-              <div className="flex justify-center items-center flex-shrink-0 ">
-                <h1 className=" font-bold text-xl cursor-pointer">
-                  Stream<span className="text-blue-500">line</span>
-                </h1>
-              </div>
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                  <Link href="home" className="cursor-pointer text-blue-600 px-3 py-2 text-md">Home</Link>
-                  <Link href="services" className="cursor-pointer hover:text-blue-600 text-black  px-3 py-2">Services</Link>
-                  <Link href="work" className="cursor-pointer hover:text-blue-600 text-black px-3 py-2">Projects</Link>
-                  <Link href="Clients" className="cursor-pointer hover:text-blue-600 text-black px-3 py-2">Clients</Link>
-                  <Link href="contact" className="cursor-pointer hover:text-blue-600 text-black px-3 py-2">Contact</Link>
-                </div>
-              </div>
-
-              <div className="flex justify-center items-center flex-shrink-0 ">
-                <h1 className=" font-semibold text-lg cursor-pointer hidden md:block">
-                  Say <span className="text-blue-500">hi</span>
-                </h1>
-              </div>
-            </div>
-            <div className="mr-14 flex md:hidden ">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                type="button"
-                className="bg-blue-600 inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-black focus:outline-none focus:ring-white"
-                aria-controls="mobile-menu"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open main menu</span>
-                {!isOpen ? (
-                  <svg
-                    className="block h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    className="block h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                )}
-              </button>
-            </div>
+    <nav className="w-full z-10 sticky bg-white top-0 border-b border-grey-light shadow-md">
+      <div className="w-full flex flex-wrap items-center lg:justify-between mt-0 py-4">
+        <div className="px-0 lg:pl-4 flex items-center lg:mx-4 cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500 text-xl font-bold mx-7">
+          <Link href="/">CodeXalok</Link>
+        </div>
+        <button onClick={() => toggleNav()} className="md:hidden text-white bg-red-600 hover:bg-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1 absolute right-3 md:right-12">Menu
+          {nav == "hidden" ? <AiFillCaretDown /> : <AiFillCaretUp />}
+        </button>
+        <div className="w-full flex-grow-5 md:flex md:flex-1 md:content-center md:justify-end md:w-auto h-0 md:h-auto overflow-hidden mt-2 md:mt-0 z-20 transition-all">
+          <ul className="flex items-center md:flex-row">
+            <li className="mx-2 my-2 text-black hover:border-b-2 hover:border-red-600">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="mx-2 my-2 text-black hover:border-b-2 hover:border-red-600">
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li className="mx-2 my-2 text-black hover:border-b-2 hover:border-red-600">
+              <Link href="/notes">Notes</Link>
+            </li>
+            <li className="mx-2 my-2 text-black hover:border-b-2 hover:border-red-600">
+              <Link href="/contact">Contact</Link>
+            </li>
+          </ul>
+          <div className="text-center my-2 pr-4 pl-2">
+            <Link href={"/login"}>
+              <button className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center  items-center mx-1">Login</button>
+            </Link>
+            <Link href={"/signup"}>
+              <button className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1">Signup</button>
+            </Link>
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+
+      <div className={`bg-red-100 text-center py-3 shadow-lg absolute w-full ${nav} md:hidden`}>
+        <ul>
+          <div className="text-center my-2 pr-4 pl-2">
+            <Link href={"/login"}>
+              <button className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center  items-center mx-1">Login</button>
+            </Link>
+            <Link href={"/signup"}>
+              <button className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1">Signup</button>
+            </Link>
+          </div>
+          <li className="pt-4 text-red-600 font-bold ">
+            <Link href="/">Home</Link>
+          </li>
+          <li className="pt-4 text-red-600 font-bold"><Link href="/blog/">Blog</Link>
+          </li>
+          <li className="pt-4 text-red-600 font-bold"><Link href="/notes/">Notes</Link>
+          </li>
+          <li className="pt-4 text-red-600 font-bold"><Link href="/contact/">Contact</Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
   )
 }
 
