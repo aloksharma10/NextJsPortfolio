@@ -39,7 +39,7 @@ function Contact() {
           </Link>
         </span>
       </div>
-      <div class="lg:w-1/2 md:w-2/3 mx-auto">
+      <div className="lg:w-1/2 md:w-2/3 mx-auto">
         <div className="flex-wrap">
           <div className="text-center">
             <span className="font-semibold text-lg block mb-2  ">
@@ -48,39 +48,39 @@ function Contact() {
             <h2 className="md:text-5xl text-4xl font-bold mb-5">Have a Project in Mind?</h2>
           </div>
         </div>
-        <div class="flex flex-wrap -m-2">
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="name" class="leading-7 text-sm text-gray-600"></label>
-              <input type="text" id="name" name="name" class="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Name' />
+        <div className="flex flex-wrap -m-2">
+          <div className="p-2 w-1/2">
+            <div className="relative">
+              <label htmlFor="name" className="leading-7 text-sm text-gray-600"></label>
+              <input type="text" id="name" name="name" className="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Name' />
             </div>
           </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600"></label>
-              <input type="text" id="email" name="email" class="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out " placeholder='Company Name' />
+          <div className="p-2 w-1/2">
+            <div className="relative">
+              <label htmlFor="email" className="leading-7 text-sm text-gray-600"></label>
+              <input type="text" id="email" name="email" className="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out " placeholder='Company Name' />
             </div>
           </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="name" class="leading-7 text-sm text-gray-600"></label>
-              <input type="email" id="name" name="name" class="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Email' />
+          <div className="p-2 w-1/2">
+            <div className="relative">
+              <label htmlFor="name" className="leading-7 text-sm text-gray-600"></label>
+              <input type="email" id="name" name="name" className="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Email' />
             </div>
           </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600"></label>
-              <input type="email" id="email" name="email" class="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Phone Number' />
+          <div className="p-2 w-1/2">
+            <div className="relative">
+              <label htmlFor="email" className="leading-7 text-sm text-gray-600"></label>
+              <input type="email" id="email" name="email" className="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Phone Number' />
             </div>
           </div>
-          <div class="p-2 w-full">
-            <div class="relative">
-              <label for="message" class="leading-7 text-sm text-gray-600"></label>
-              <textarea id="message" name="message" class="w-full bg-gray-100 my-1 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" placeholder='Message'></textarea>
+          <div className="p-2 w-full">
+            <div className="relative">
+              <label htmlFor="message" className="leading-7 text-sm text-gray-600"></label>
+              <textarea id="message" name="message" className="w-full bg-gray-100 my-1 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" placeholder='Message'></textarea>
             </div>
           </div>
-          <div class="p-2 w-full">
-            <button class="flex mx-auto text-white bg-red-500 border-0 py-3 md:px-4 px-4 rounded-full focus:outline-none hover:bg-red-600 text-sm md:text-base">Connect</button>
+          <div className="p-2 w-full">
+            <button className="flex mx-auto text-white bg-red-500 border-0 py-3 md:px-4 px-4 rounded-full focus:outline-none hover:bg-red-600 text-sm md:text-base">Connect</button>
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="hidden md:block md:w-1/2" style={{ clipPath: "polygon(12% 0px, 100% 0%, 100% 100%, 0px 100%)" }}>
+        <div className="hidden md:block md:w-1/2 relative"  style={{ clipPath: "polygon(12% 0px, 100% 0%, 100% 100%, 0px 100%)" }}>
           <Image src={'/hero.jpg'} layout="fill" alt='' />
         </div>
       </div>
