@@ -1,8 +1,12 @@
+import Head from 'next/head'
 import React from 'react'
 
 function login() {
   return (
-    <div>login</div>
+    <>
+      <Head><title>Login | CodeXalok</title></Head>
+      <div>login</div>
+    </>
   )
 }
 

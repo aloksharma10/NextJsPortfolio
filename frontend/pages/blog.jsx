@@ -1,9 +1,11 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
 
 function blog() {
     return (
         <>
+        <Head><title>Blog | CodeXalok</title></Head>
             <section class="text-gray-600 body-font">
                 <div class="container px-5 mx-auto">
                     <div className="flex-wrap py-10">

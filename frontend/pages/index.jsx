@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home - Welcome to CodeXalok</title>
+        <title>Home | Welcome to CodeXalok</title>
       </Head>
       {/* Main container */}
       <div className="flex bg-white h-96 mx-auto container">

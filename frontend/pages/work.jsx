@@ -1,9 +1,13 @@
+import Head from 'next/head'
 import React from 'react'
 
-function work() {
+function Work() {
   return (
-    <div>work</div>
+    <>
+      <Head><title>Work | CodeXalok</title></Head>
+      Work
+    </>
   )
 }
 
-export default work
+export default Work

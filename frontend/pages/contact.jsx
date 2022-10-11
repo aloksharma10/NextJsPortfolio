@@ -4,13 +4,16 @@ import { BsWhatsapp } from 'react-icons/bs';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { AiOutlineGithub, AiFillTwitterCircle } from 'react-icons/ai';
 import Image from 'next/image';
+import Head from 'next/head';
 
 function Contact() {
   return (
+    <>
+    <Head><title>Contact | CodeXalok</title></Head>
     <div className='bg-gray-50 lg:flex p-8 justify-between'>
       <div className='text-center m-auto'>
         <div className='text-2xl md:text-4xl font-bold'>Feel free to contact us</div>
-        <div>
+        <div className='py-3'>
           <Image src="/contact.jpg" width={150} height={150} className="mx-auto my-5 rounded-full" alt="" />
         </div>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start mx-auto">
@@ -49,25 +52,25 @@ function Contact() {
           <div class="p-2 w-1/2">
             <div class="relative">
               <label for="name" class="leading-7 text-sm text-gray-600"></label>
-              <input type="text" id="name" name="name" class="w-full my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder='Name' />
+              <input type="text" id="name" name="name" class="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Name' />
             </div>
           </div>
           <div class="p-2 w-1/2">
             <div class="relative">
               <label for="email" class="leading-7 text-sm text-gray-600"></label>
-              <input type="text" id="email" name="email" class="w-full my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out " placeholder='Company Name' />
+              <input type="text" id="email" name="email" class="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out " placeholder='Company Name' />
             </div>
           </div>
           <div class="p-2 w-1/2">
             <div class="relative">
               <label for="name" class="leading-7 text-sm text-gray-600"></label>
-              <input type="email" id="name" name="name" class="w-full my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder='Email' />
+              <input type="email" id="name" name="name" class="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Email' />
             </div>
           </div>
           <div class="p-2 w-1/2">
             <div class="relative">
               <label for="email" class="leading-7 text-sm text-gray-600"></label>
-              <input type="email" id="email" name="email" class="w-full my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder='Phone Number' />
+              <input type="email" id="email" name="email" class="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Phone Number' />
             </div>
           </div>
           <div class="p-2 w-full">
@@ -82,6 +85,7 @@ function Contact() {
         </div>
       </div>
     </div>
+    </>
 
   )
 }

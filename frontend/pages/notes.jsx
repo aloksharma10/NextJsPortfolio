@@ -1,8 +1,10 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
 
 function Notes() {
   return (
+    <> <Head><title>Notes | CodeXalok</title></Head>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
       <div className="p-6 flex justify-center">
         <div className="w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md">
@@ -17,8 +19,8 @@ function Notes() {
           </div>
         </div>
       </div>
- 
     </div>
+    </>
   )
 }
 
