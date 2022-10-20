@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  let tkn='45b0d659dc449d7ec17a1f3a9de4c64a25b316d36b105123c208acc9bf49cd363ecc42c41367a2d49bf2ed9ca19d415ce8f21bec008db3ec4fee48c728c265943b8a8a2e6aca978b648a2de07ffa68aa29ea1a86ef9ca84aa4e73674e7f56a168a99fc0536b9fb28ea6bf4065e787e58252298d53fb58f2fbbe88d397382121a'
+  // let tkn='45b0d659dc449d7ec17a1f3a9de4c64a25b316d36b105123c208acc9bf49cd363ecc42c41367a2d49bf2ed9ca19d415ce8f21bec008db3ec4fee48c728c265943b8a8a2e6aca978b648a2de07ffa68aa29ea1a86ef9ca84aa4e73674e7f56a168a99fc0536b9fb28ea6bf4065e787e58252298d53fb58f2fbbe88d397382121a'
 
   let a = email.split('@')
   const handleChange = (e) => {
@@ -23,13 +23,11 @@ function Login() {
     let res = await fetch("http://localhost:1337/api/auth/local", {
       method: "POST",
       headers: {
-        'content-type': 'application/json',
-        Authorization: `${tkn}`
+        'content-type': 'application/json'
       },
       body: JSON.stringify(data)
     })
     let resData = await res.json()
-    console.log(resData)
     if (resData.data == null && resData.jwt == null ) {
       toast.error('Invalid Credential!', {
         position: "top-right",

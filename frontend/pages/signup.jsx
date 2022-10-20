@@ -10,7 +10,6 @@ function Signup() {
   const [password, setPassword] = useState('')
   const [cpassword, setCpassword] = useState('')
   let a = email.split('@')
-  console.log()
 
   const handleChange = (e) => {
     if (e.target.name == "name") { setName(e.target.value) }
@@ -49,17 +48,16 @@ function Signup() {
       let data = {
         Name: name, username: a[0], email, password
       }
-      let res = await fetch("http://localhost:1337/api/users", {
+      let res = await fetch("http://localhost:1337/api/auth/local/register", {
         method: "POST",
         headers: {
           'content-type': 'application/json',
-          Authorization: '45b0d659dc449d7ec17a1f3a9de4c64a25b316d36b105123c208acc9bf49cd363ecc42c41367a2d49bf2ed9ca19d415ce8f21bec008db3ec4fee48c728c265943b8a8a2e6aca978b648a2de07ffa68aa29ea1a86ef9ca84aa4e73674e7f56a168a99fc0536b9fb28ea6bf4065e787e58252298d53fb58f2fbbe88d397382121a'
         },
         body: JSON.stringify(data)
       })
       let resData = await res.json()
-      console.log(resData)
-      if (resData.email == email || resData.data != null) {
+      if (resData.user.
+        email == email || resData.data != null) {
         toast.success('Your account has been created successfully.', {
           position: "top-right",
           autoClose: 1500,
@@ -72,7 +70,7 @@ function Signup() {
         });
       }
       else {
-        toast.error(resData.error.message, {
+        toast.error("Email is already taken", {
           position: "top-right",
           autoClose: 1500,
           hideProgressBar: false,
