@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Navbar({ login, logout }) {
   const [nav, setNav] = useState("hidden")
-
   const toggleNav = () => {
     if (nav == "hidden") {
       setNav("block")
@@ -64,8 +63,7 @@ function Navbar({ login, logout }) {
                   <button className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center  items-center mx-1">Signup</button>
                 </Link>
               </div>
-                :
-                <button onClick={logout} className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1">Logout</button>
+                : <button onClick={logout} className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1">Logout</button>
               }
             </div>
           </div>

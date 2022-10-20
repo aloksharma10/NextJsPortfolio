@@ -24,7 +24,6 @@ function MyApp({ Component, pageProps }) {
       setLogin(true)
       setKey(Math.random())
     }
-    console.log("helo")
 
   }, [router.query])
 

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "project"
+    "displayName": "Project"
   },
   "options": {
     "draftAndPublish": true
@@ -19,17 +19,21 @@
       "type": "text",
       "required": true
     },
-    "githublink": {
-      "type": "text",
-      "unique": true
-    },
-    "image": {
+    "Image": {
       "allowedTypes": [
         "images"
       ],
       "type": "media",
       "multiple": false,
       "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "github": {
+      "type": "string",
+      "unique": true
     }
   }
 }
