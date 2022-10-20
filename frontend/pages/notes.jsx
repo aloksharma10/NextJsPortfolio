@@ -11,7 +11,7 @@ function Notes() {
             <img  width={100} className="mb-3 h-24 rounded-full shadow-lg" src="/alok.jpg" alt=""/>
               <h5 className="mb-1 text-xl font-medium text-gray-900 ">C Notes</h5>
               <span className="text-sm text-gray-500 ">Download Notes Here</span>
-              <div className="grid  mt-4  ">
+              <div className="grid mt-4  ">
                 <a className="inline-block text-white bg-red-600 rounded-full px-3 py-2 text-sm font-semibold mr-2 my-1 cursor-pointer hover:bg-red-900 text-center" href=""><button>PDF Notes</button></a>
                 <a className="inline-block text-white bg-red-600 rounded-full px-3 py-2 text-sm font-semibold mr-2 my-1 cursor-pointer hover:bg-red-900 text-center" href=""><button>Github Codes</button></a>
               </div>
