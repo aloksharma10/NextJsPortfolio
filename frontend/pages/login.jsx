@@ -1,14 +1,15 @@
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import Router from 'next/router';
-import React, { useState } from 'react'
+import { Router, useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { FcGoogle } from 'react-icons/fc';
 
-function Login() {
+
+function Login(props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  // let tkn='45b0d659dc449d7ec17a1f3a9de4c64a25b316d36b105123c208acc9bf49cd363ecc42c41367a2d49bf2ed9ca19d415ce8f21bec008db3ec4fee48c728c265943b8a8a2e6aca978b648a2de07ffa68aa29ea1a86ef9ca84aa4e73674e7f56a168a99fc0536b9fb28ea6bf4065e787e58252298d53fb58f2fbbe88d397382121a'
 
   let a = email.split('@')
   const handleChange = (e) => {
@@ -28,7 +29,7 @@ function Login() {
       body: JSON.stringify(data)
     })
     let resData = await res.json()
-    if (resData.data == null && resData.jwt == null ) {
+    if (resData.data == null && resData.jwt == null) {
       toast.error('Invalid Credential!', {
         position: "top-right",
         autoClose: 1500,
@@ -40,7 +41,7 @@ function Login() {
         theme: "light",
       });
     }
-    else if (resData.user.email==email) {
+    else if (resData.user.email == email) {
       toast.success('You are logged in!', {
         position: "top-right",
         autoClose: 1500,
@@ -60,7 +61,6 @@ function Login() {
     }
   }
 
-
   return (
     <>
       <Head><title>Login | CodeXalok</title></Head>
@@ -77,9 +77,21 @@ function Login() {
         theme="light"
       />
       <section className=" bg-gray-50 min-h-screen ">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:py-5">
+        <div className="flex flex-col items-center justify-center px-4 py-8 mx-auto md:py-5">
           <div className="px-0 lg:pl-4 flex items-center lg:mx-4 cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500 text-3xl font-bold my-5">
             <Link href="/">Welcome to CodeXalok</Link>
+          </div>
+          <Link href={'http://localhost:1337/api/connect/google'}>
+            <a target="_blank" className='flex'>
+              <div className='flex bg-red-100 font-medium rounded-lg text-lg justify-center px-5 py-2 text-center"' role="button" >
+                <FcGoogle className='text-3xl mx-3' /><span className="">Sign in with Google</span>
+              </div>
+            </a>
+          </Link>
+          <div className="my-3 flex items-center justify-between">
+            <span className="border-b w-48"></span>
+            <span className="text-sm text-center text-gray-500 uppercase dark:text-gray-400">or login with email</span>
+            <span className="border-b w-48"></span>
           </div>
           <div className="w-full bg-red-200 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0  ">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -87,15 +99,15 @@ function Login() {
                 Sign in to your account
               </h1>
               <form onSubmit={handleSubmit} method="post">
-                <div>
-                  <label htmlFor="email" className="block mb-2 text-sm font-medium text-black ">Your email</label>
+                <div className='mb-4'>
+                  <label htmlFor="email" className="block text-sm font-medium text-black ">Your email</label>
                   <input onChange={handleChange} type="email" name="email" value={email} id="email" className="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="name@company.com" required="" />
                 </div>
-                <div>
-                  <label htmlFor="password" className="block mb-2 text-sm font-medium text-black ">Password</label>
+                <div className='mb-4'>
+                  <label htmlFor="password" className="block text-sm font-medium text-black ">Password</label>
                   <input onChange={handleChange} type="password" name="password" value={password} id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" required="" />
                 </div>
-                <div className="md:flex items-center justify-between">
+                <div className="md:flex items-center mt-3 justify-between">
                   <div className="flex items-start">
                     <div className="flex items-center h-5">
                     </div>
@@ -107,10 +119,11 @@ function Login() {
                   </div>
                   <a href="#" className="text-sm font-medium text-red-600 hover:underline ">Forgot password?</a>
                 </div>
-                <button type="submit" className="w-full mt-6 text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+                <button type="submit" className="w-full mt-3 text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
               </form>
             </div>
           </div>
+
         </div>
       </section>
     </>
