@@ -6,10 +6,21 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from 'react-icons/fc';
 
-
 function Login(props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const router = useRouter()
+  let { gData, status } = props
+
+  if (status === true) {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("token", gData.jwt);
+      localStorage.setItem("user", gData.user.username);
+      setTimeout(() => {
+        router.push("/")
+      }, []);
+    }
+  }
 
   let a = email.split('@')
   const handleChange = (e) => {
@@ -53,8 +64,9 @@ function Login(props) {
         theme: "light",
       });
       localStorage.setItem("token", resData.jwt);
+      localStorage.setItem("user", resData.user);
       setTimeout(() => {
-        Router.push("/")
+        router.push("/")
       }, [1000]);
       setEmail('')
       setPassword('')
@@ -82,7 +94,7 @@ function Login(props) {
             <Link href="/">Welcome to CodeXalok</Link>
           </div>
           <Link href={'http://localhost:1337/api/connect/google'}>
-            <a target="_blank" className='flex'>
+            <a className='flex'>
               <div className='flex bg-red-100 font-medium rounded-lg text-lg justify-center px-5 py-2 text-center"' role="button" >
                 <FcGoogle className='text-3xl mx-3' /><span className="">Sign in with Google</span>
               </div>
@@ -129,5 +141,20 @@ function Login(props) {
     </>
   )
 }
+
+export async function getServerSideProps(context) {
+  let status = false
+  if (context.query.id_token) {
+    let res = await fetch(`http://localhost:1337/api/auth/google/callback?id_token=${context.query.id_token}&access_token=${context.query.access_token}`)
+    var cData = await res.json()
+    if (cData.data !== null) {
+      status = true
+    }
+  }
+  return {
+    props: { gData: cData ? cData : "", status },
+  }
+}
+
 
 export default Login

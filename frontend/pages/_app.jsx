@@ -31,6 +31,7 @@ function MyApp({ Component, pageProps }) {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     toast.success("You are successfully logout", {
       position: "top-right",
       autoClose: 1500,

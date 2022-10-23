@@ -5,12 +5,23 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from 'react-icons/fc';
 
-function Signup() {
+function Signup(props) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [cpassword, setCpassword] = useState('')
   let a = email.split('@')
+  let { gData, status } = props
+
+  if (status === true) {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("token", gData.jwt);
+      localStorage.setItem("user", gData.user.username);
+      setTimeout(() => {
+        router.push("/")
+      }, []);
+    }
+  }
 
   const handleChange = (e) => {
     if (e.target.name == "name") { setName(e.target.value) }
@@ -57,8 +68,7 @@ function Signup() {
         body: JSON.stringify(data)
       })
       let resData = await res.json()
-      if (resData.user.
-        email == email || resData.data != null) {
+      if (resData.user.email == email || resData.data != null) {
         toast.success('Your account has been created successfully.', {
           position: "top-right",
           autoClose: 1500,
@@ -112,9 +122,11 @@ function Signup() {
           <div className="px-0 lg:pl-4 flex items-center lg:mx-4 cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500 text-3xl font-bold my-5">
             <Link href="/">Welcome to CodeXalok</Link>
           </div>
-          <div className='flex bg-red-100 font-medium rounded-lg text-lg justify-center px-5 py-2 text-center"' role="button" >
-            <FcGoogle className='text-3xl mx-3' /><span className="">Sign up with Google</span>
-          </div>
+          <Link href={'http://localhost:1337/api/connect/google'}>
+            <div className='flex bg-red-100 font-medium rounded-lg text-lg justify-center px-5 py-2 text-center"' role="button" >
+              <FcGoogle className='text-3xl mx-3' /><span className="">Sign up with Google</span>
+            </div>
+          </Link>
           <div className="my-3 flex items-center justify-between">
             <span className="border-b w-48"></span>
             <span className="text-sm text-center text-gray-500 uppercase dark:text-gray-400">or login with email</span>
@@ -150,6 +162,20 @@ function Signup() {
       </section>
     </>
   )
+}
+
+export async function getServerSideProps(context) {
+  let status = false
+  if (context.query.id_token) {
+    let res = await fetch(`http://localhost:1337/api/auth/google/callback?id_token=${context.query.id_token}&access_token=${context.query.access_token}`)
+    var cData = await res.json()
+    if (cData.data !== null) {
+      status = true
+    }
+  }
+  return {
+    props: { gData: cData ? cData : "", status },
+  }
 }
 
 export default Signup
