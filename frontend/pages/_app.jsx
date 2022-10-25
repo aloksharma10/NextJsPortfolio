@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
       height={3}
     />
     <Navbar login={login} key={key} logout={handleLogout} />
-    <Component {...pageProps} />
+    <Component {...pageProps} login={login} />
     <Footer />
   </>
 }

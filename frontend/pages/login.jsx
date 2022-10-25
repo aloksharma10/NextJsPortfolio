@@ -1,28 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Router, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from 'react-icons/fc';
 
-function Login(props) {
+function Login({ login }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const router = useRouter()
-  let { gData, status } = props
-
-  if (status === true) {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem("token", gData.jwt);
-      localStorage.setItem("user", gData.user.username);
-      setTimeout(() => {
-        router.push("/")
-      }, []);
+  useEffect(() => {
+    if (!login) {
+      router.push('/')
     }
-  }
+  }, [router])
 
-  let a = email.split('@')
+
   const handleChange = (e) => {
     if (e.target.name == "email") { setEmail(e.target.value) }
     if (e.target.name == "password") { setPassword(e.target.value) }
@@ -76,29 +70,27 @@ function Login(props) {
   return (
     <>
       <Head><title>Login | CodeXalok</title></Head>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-      <section className=" bg-gray-50 min-h-screen ">
+      {!login && <section className=" bg-gray-50 min-h-screen ">
         <div className="flex flex-col items-center justify-center px-4 py-8 mx-auto md:py-5">
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
           <div className="px-0 lg:pl-4 flex items-center lg:mx-4 cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500 text-3xl font-bold my-5">
             <Link href="/">Welcome to CodeXalok</Link>
           </div>
-          <Link href={'http://localhost:1337/api/connect/google'}>
-            <a className='flex'>
-              <div className='flex bg-red-100 font-medium rounded-lg text-lg justify-center px-5 py-2 text-center"' role="button" >
-                <FcGoogle className='text-3xl mx-3' /><span className="">Sign in with Google</span>
-              </div>
-            </a>
+          <Link href={'http://localhost:1337/api/connect/google'} >
+            <div className='flex cursor-pointer bg-red-100 font-medium rounded-lg text-lg justify-center px-5 py-2 text-center"' role="button" >
+              <FcGoogle className='text-3xl mx-3' /><span className="">Sign in with Google</span>
+            </div>
           </Link>
           <div className="my-3 flex items-center justify-between">
             <span className="border-b w-48"></span>
@@ -135,26 +127,10 @@ function Login(props) {
               </form>
             </div>
           </div>
-
         </div>
-      </section>
+      </section>}
     </>
   )
 }
-
-export async function getServerSideProps(context) {
-  let status = false
-  if (context.query.id_token) {
-    let res = await fetch(`http://localhost:1337/api/auth/google/callback?id_token=${context.query.id_token}&access_token=${context.query.access_token}`)
-    var cData = await res.json()
-    if (cData.data !== null) {
-      status = true
-    }
-  }
-  return {
-    props: { gData: cData ? cData : "", status },
-  }
-}
-
 
 export default Login
