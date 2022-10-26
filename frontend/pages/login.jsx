@@ -12,7 +12,7 @@ function Login({ login }) {
   const router = useRouter()
   useEffect(() => {
     if (login) {
-      toast.success('You are logged in!', {
+      toast.success('You are already logged in!', {
         position: "top-right",
         autoClose: 1500,
         hideProgressBar: false,

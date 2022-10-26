@@ -16,7 +16,7 @@ function Signup({login}) {
 
   useEffect(() => {
     if (login) {
-      toast.success('You are logged in!', {
+      toast.success('You are already logged in!', {
         position: "top-right",
         autoClose: 1500,
         hideProgressBar: false,
