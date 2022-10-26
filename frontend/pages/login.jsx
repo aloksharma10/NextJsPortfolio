@@ -11,12 +11,23 @@ function Login({ login }) {
   const [password, setPassword] = useState('')
   const router = useRouter()
   useEffect(() => {
-    if (!login) {
-      router.push('/')
+    if (login) {
+      toast.success('You are logged in!', {
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      setTimeout(() => {
+        router.push('/')
+      }, 1000);
     }
-  }, [router])
-
-
+  }, [login])
+  
   const handleChange = (e) => {
     if (e.target.name == "email") { setEmail(e.target.value) }
     if (e.target.name == "password") { setPassword(e.target.value) }
@@ -34,6 +45,7 @@ function Login({ login }) {
       body: JSON.stringify(data)
     })
     let resData = await res.json()
+    console.log(resData)
     if (resData.data == null && resData.jwt == null) {
       toast.error('Invalid Credential!', {
         position: "top-right",
@@ -46,7 +58,7 @@ function Login({ login }) {
         theme: "light",
       });
     }
-    else if (resData.user.email == email) {
+    else if (resData.jwt) {
       toast.success('You are logged in!', {
         position: "top-right",
         autoClose: 1500,
@@ -58,7 +70,7 @@ function Login({ login }) {
         theme: "light",
       });
       localStorage.setItem("token", resData.jwt);
-      localStorage.setItem("user", resData.user);
+      localStorage.setItem("user", resData.user.username);
       setTimeout(() => {
         router.push("/")
       }, [1000]);

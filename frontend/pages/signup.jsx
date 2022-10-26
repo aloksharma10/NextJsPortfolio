@@ -1,27 +1,36 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from 'react-icons/fc';
+import { useRouter } from 'next/router';
 
-function Signup(props) {
+function Signup({login}) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [cpassword, setCpassword] = useState('')
+  const router= useRouter()
   let a = email.split('@')
-  let { gData, status } = props
 
-  if (status === true) {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem("token", gData.jwt);
-      localStorage.setItem("user", gData.user.username);
+  useEffect(() => {
+    if (login) {
+      toast.success('You are logged in!', {
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       setTimeout(() => {
-        router.push("/")
-      }, []);
+        router.push('/')
+      }, 1000);
     }
-  }
+  }, [login])
 
   const handleChange = (e) => {
     if (e.target.name == "name") { setName(e.target.value) }
@@ -68,7 +77,7 @@ function Signup(props) {
         body: JSON.stringify(data)
       })
       let resData = await res.json()
-      if (resData.user.email == email || resData.data != null) {
+      if (resData.jwt) {
         toast.success('Your account has been created successfully.', {
           position: "top-right",
           autoClose: 1500,
@@ -81,7 +90,7 @@ function Signup(props) {
         });
       }
       else {
-        toast.error("Email is already taken", {
+        toast.error("Email is already taken!", {
           position: "top-right",
           autoClose: 1500,
           hideProgressBar: false,
@@ -117,7 +126,7 @@ function Signup(props) {
           theme="light"
         />
       </div>
-      <section className="bg-gray-50 min-h-screen">
+     {!login && <section className="bg-gray-50 min-h-screen">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:py-5">
           <div className="px-0 lg:pl-4 flex items-center lg:mx-4 cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500 text-3xl font-bold my-5">
             <Link href="/">Welcome to CodeXalok</Link>
@@ -159,23 +168,11 @@ function Signup(props) {
             </div>
           </div>
         </div>
-      </section>
+      </section>}
     </>
-  )
+ 
+)
 }
 
-export async function getServerSideProps(context) {
-  let status = false
-  if (context.query.id_token) {
-    let res = await fetch(`http://localhost:1337/api/auth/google/callback?id_token=${context.query.id_token}&access_token=${context.query.access_token}`)
-    var cData = await res.json()
-    if (cData.data !== null) {
-      status = true
-    }
-  }
-  return {
-    props: { gData: cData ? cData : "", status },
-  }
-}
 
 export default Signup
