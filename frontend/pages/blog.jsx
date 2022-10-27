@@ -1,21 +1,21 @@
 import Head from 'next/head'
 import React from 'react'
 
-function blog() {
-    return (
-        <>
-            <Head><title>Blog | CodeXalok</title></Head>
+function Blog() {
+  return (
+    <div>
+        <Head><title>Blog | CodeXalok</title></Head>
             <section className="body-font py-5">
                 <div className="container px-5 mx-auto">
                     <div className="flex-wrap py-10">
                         <div className="text-center">
-                            <span className="font-semibold text-lg block mb-1 text-red-700 ">
+                            <span className="font-semibold text-lg block mb-1 text-red-700 dark:text-red-600  ">
                                 Recent Posts
                             </span>
                             <h2 className="md:text-5xl text-4xl font-bold mb-5">From The Blog</h2>
                         </div>
                     </div>
-                    <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+                    <div className="flex bg-red-200 dark:bg-slate-900 items-center dark:shadow-lg dark:shadow-slate-600 rounded-lg p-5 lg:w-3/5 mx-auto pb-8 mb-10 sm:flex-row flex-col">
                         <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                             <h2 className="text-gray-900 dark:text-white text-lg title-font font-medium mb-2">The Catalyzer</h2>
                             <p className="leading-relaxed text-base dark:text-gray-200">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
@@ -33,7 +33,7 @@ function blog() {
                             </svg>
                         </div>
                     </div>
-                    <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
+                    <div className="flex bg-red-200 dark:bg-slate-900 items-center dark:shadow-lg dark:shadow-slate-600 rounded-lg p-5 pb-8 lg:w-3/5 mx-auto sm:flex-row flex-col">
                         <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-red-100 text-red-500 flex-shrink-0">
                             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
                                 <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
@@ -52,8 +52,8 @@ function blog() {
                     </div>
                 </div>
             </section>
-        </>
-    )
+    </div>
+  )
 }
 
-export default blog
+export default Blog

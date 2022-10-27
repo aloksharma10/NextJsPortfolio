@@ -109,31 +109,31 @@ function Contact() {
               <div className="p-2 w-1/2">
                 <div className="relative">
                   <label htmlFor="name" className="leading-7 text-sm text-gray-600"></label>
-                  <input onChange={handleChange} value={name} type="text" id="name" name="name" className="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Name' />
+                  <input onChange={handleChange} value={name} type="text" id="name" name="name" className="w-full md:my-1 bg-gray-200 bg-opacity-80 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-black py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Name' />
                 </div>
               </div>
               <div className="p-2 w-1/2">
                 <div className="relative">
                   <label htmlFor="companyNane" className="leading-7 text-sm text-gray-600"></label>
-                  <input onChange={handleChange} value={companyName} type="text" id="companyName" name="companyName" className="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out " placeholder='Company Name' />
+                  <input onChange={handleChange} value={companyName} type="text" id="companyName" name="companyName" className="w-full md:my-1 bg-gray-200 bg-opacity-80 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-black py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out " placeholder='Company Name' />
                 </div>
               </div>
               <div className="p-2 w-1/2">
                 <div className="relative">
                   <label htmlFor="name" className="leading-7 text-sm text-gray-600"></label>
-                  <input required onChange={handleChange} value={email} type="email" id="name" name="email" className="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Email' />
+                  <input required onChange={handleChange} value={email} type="email" id="name" name="email" className="w-full md:my-1 bg-gray-200 bg-opacity-80 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-black py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Email' />
                 </div>
               </div>
               <div className="p-2 w-1/2">
                 <div className="relative">
                   <label htmlFor="phone" className="leading-7 text-sm text-gray-600"></label>
-                  <input required onChange={handleChange} value={phone} type="phone" id="phone" name="phone" className="w-full md:my-1 bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Phone Number' />
+                  <input required onChange={handleChange} value={phone} type="phone" id="phone" name="phone" className="w-full md:my-1 bg-gray-200 bg-opacity-80 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-black py-1 md:py-2 px-4 leading-8 transition-colors duration-200 ease-in-out" placeholder='Phone Number' />
                 </div>
               </div>
               <div className="p-2 w-full">
                 <div className="relative">
                   <label htmlFor="message" className="leading-7 text-sm text-gray-600"></label>
-                  <textarea required onChange={handleChange} value={message} id="message" name="message" className="w-full bg-gray-100 my-1 bg-opacity-50 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" placeholder='Message'></textarea>
+                  <textarea required onChange={handleChange} value={message} id="message" name="message" className="w-full bg-gray-200 bg-opacity-80 my-1 rounded-lg border border-gray-300 focus:border-red-400 focus:bg-white focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-black py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" placeholder='Message'></textarea>
                 </div>
               </div>
               <div className="p-2 w-full">

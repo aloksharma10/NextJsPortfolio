@@ -32,7 +32,7 @@ export default function Home() {
       <div className="mx-auto lg:px-5 pt-10 container">
         <div className="md:flex">
           <div className="p-5">
-            <span className="font-bold text-red-700 text-xl">ABOUT US</span>
+            <span className="font-bold text-red-700 dark:text-red-600 text-xl">ABOUT US</span>
             <h2 className="text-5xl font-semibold">
               Better design,<br />Better experience
             </h2>
@@ -82,7 +82,7 @@ export default function Home() {
       <div>
         <div className="flex flex-wrap justify-center md:mx-20 mx-10 pt-10 ">
           <div className="p-5 text-center">
-            <span className="font-bold text-red-700 text-xl">Recent Posts</span>
+            <span className="font-bold text-red-700 dark:text-red-600 text-xl">Recent Posts</span>
             <h2 className=" text-4xl md:text-5xl font-semibold">
               From The Blog
             </h2>
@@ -163,7 +163,7 @@ export default function Home() {
           <div className="pb-16">
             <div className="flex flex-wrap">
               <div className="text-center mx-auto ">
-                <span className="font-bold text-red-700 text-xl  ">
+                <span className="font-bold text-red-700 dark:text-red-600 text-xl  ">
                   Education &amp; Experience
                 </span>
                 <h2 className="text-5xl font-bold mb-5">My Resume</h2>
