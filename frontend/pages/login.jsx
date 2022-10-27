@@ -82,7 +82,7 @@ function Login({ login }) {
   return (
     <>
       <Head><title>Login | CodeXalok</title></Head>
-      {!login && <section className=" bg-gray-50 min-h-screen ">
+      {!login && <section className=" min-h-screen ">
         <div className="flex flex-col items-center justify-center px-4 py-8 mx-auto md:py-5">
           <ToastContainer
             position="top-right"
@@ -96,31 +96,31 @@ function Login({ login }) {
             pauseOnHover
             theme="light"
           />
-          <div className="px-0 lg:pl-4 flex items-center lg:mx-4 cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500 text-3xl font-bold my-5">
+          <div className="px-0 lg:pl-4 flex items-center lg:mx-4 cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500 dark:from-slate-200 dark:to-red-500 text-3xl font-bold my-5">
             <Link href="/">Welcome to CodeXalok</Link>
           </div>
           <Link href={'http://localhost:1337/api/connect/google'} >
-            <div className='flex cursor-pointer bg-red-100 font-medium rounded-lg text-lg justify-center px-5 py-2 text-center"' role="button" >
+            <div className='flex cursor-pointer bg-red-100 dark:bg-slate-900 font-medium rounded-lg text-lg justify-center px-5 py-2 text-center"' role="button" >
               <FcGoogle className='text-3xl mx-3' /><span className="">Sign in with Google</span>
             </div>
           </Link>
           <div className="my-3 flex items-center justify-between">
-            <span className="border-b w-48"></span>
+            <span className="border-b md:w-48 w-32"></span>
             <span className="text-sm text-center text-gray-500 uppercase dark:text-gray-400">or login with email</span>
-            <span className="border-b w-48"></span>
+            <span className="border-b md:w-48 w-32"></span>
           </div>
-          <div className="w-full bg-red-200 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0  ">
+          <div className="w-full bg-red-200 dark:bg-slate-900 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0  ">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-black md:text-2xl ">
+              <h1 className="text-xl font-bold leading-tight tracking-tight  md:text-2xl ">
                 Sign in to your account
               </h1>
               <form onSubmit={handleSubmit} method="post">
                 <div className='mb-4'>
-                  <label htmlFor="email" className="block text-sm font-medium text-black ">Your email</label>
+                  <label htmlFor="email" className="block text-sm font-medium  ">Your email</label>
                   <input onChange={handleChange} type="email" name="email" value={email} id="email" className="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" placeholder="name@company.com" required="" />
                 </div>
                 <div className='mb-4'>
-                  <label htmlFor="password" className="block text-sm font-medium text-black ">Password</label>
+                  <label htmlFor="password" className="block text-sm font-medium  ">Password</label>
                   <input onChange={handleChange} type="password" name="password" value={password} id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5" required="" />
                 </div>
                 <div className="md:flex items-center mt-3 justify-between">
@@ -128,7 +128,7 @@ function Login({ login }) {
                     <div className="flex items-center h-5">
                     </div>
                     <div className="text-sm">
-                      <p className="text-sm font-light text-black">
+                      <p className="text-sm font-light ">
                         Don’t have an account yet? <a href="#" className="font-medium text-red-600 hover:underline ">Sign up</a>
                       </p>
                     </div>

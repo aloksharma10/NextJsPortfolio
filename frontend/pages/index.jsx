@@ -3,7 +3,6 @@ import { BsWhatsapp } from 'react-icons/bs';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { AiOutlineGithub, AiFillTwitterCircle } from 'react-icons/ai';
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function Home() {
   return (
@@ -11,22 +10,21 @@ export default function Home() {
       <Head>
         <title>Home | Welcome to CodeXalok</title>
       </Head>
-      {/* Main container */}
-      <div className="flex bg-white h-96 mx-auto container">
-        <div className="flex items-center text-center md:text-left px-8 md:px-12 md:w-3/5">
+      <div className="flex dark:border-b border-gray-500 bg-white dark:bg-slate-800 h-96 mx-auto container  ">
+        <div className=" flex items-center text-center lg:text-left px-8 lg:px-8 lg:w-3/5">
           <div>
-            <h2 className="text-3xl font-semibold text-gray-800 md:text-4xl">
-              Welcome to <span className="bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500">CodeXalok</span>
+            <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-300 md:text-4xl">
+              Welcome to <span className="bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500 dark:from-slate-200 dark:to-red-500 ">CodeXalok</span>
             </h2>
-            <p className="mt-2 text-sm text-gray-500 md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam ea vel et rerum libero in iste dolores ut doloribus. Mollitia vitae nisi magnam, reprehenderit quo ab, pariatur animi provident reiciendis repudiandae tenetur sequi dolore illo sunt soluta praesentium laudantium ullam sed velit eos natus odit aliquid, quam molestias. Provident, in.</p>
-            <div className="flex justify-center md:justify-start mt-6">
+            <p className="mt-2 text-sm text-gray-500 dark:text-gray-300 md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam ea vel et rerum libero in iste dolores ut doloribus. Mollitia vitae nisi magnam, reprehenderit quo ab, pariatur animi provident reiciendis repudiandae tenetur sequi dolore illo sunt soluta praesentium laudantium ullam sed velit eos natus odit aliquid, quam molestias. Provident, in.</p>
+            <div className="flex justify-center lg:justify-start mt-6">
               <button className="px-3 py-2 lg:px-7 lg:py-3 bg-red-500 text-white text-sm font-bold rounded-full hover:bg-red-400 duration-300">Hire Me</button>
 
               <button className="px-3 py-2 mx-4 lg:px-6 lg:py-3 bg-gray-300 text-gray-900 text-sm font-semibold rounded-full hover:bg-gray-400 duration-300">Download Resume</button>
             </div>
           </div>
         </div>
-        <div className="hidden md:block md:w-1/2 relative"  style={{ clipPath: "polygon(12% 0px, 100% 0%, 100% 100%, 0px 100%)" }}>
+        <div className="hidden lg:block lg:w-1/2 relative" style={{ clipPath: "polygon(12% 0px, 100% 0%, 100% 100%, 0px 100%)" }}>
           <img src={'/hero.jpg'} alt='' />
         </div>
       </div>
@@ -88,13 +86,13 @@ export default function Home() {
             <h2 className=" text-4xl md:text-5xl font-semibold">
               From The Blog
             </h2>
-            <p className="md:w-2/3 mb-5 mx-auto text-center text-base text-gray-600 leading-7 font-semibold">
+            <p className="md:w-2/3 mb-5 mx-auto text-center text-base text-gray-600  dark:text-gray-400 leading-7 font-semibold">
               There are many variations of passages of Lorem Ipsum available
               but the majority have suffered alteration in some form.
             </p>
           </div>
-          <div className="lg:p-4 md:w-1/3 flex justify-center mb-3">
-            <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg">
+          <div className="lg:p-4 md:w-1/3 flex justify-center mb-3 ">
+            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 shadow-lg">
               <span className='border-box inline-block overflow-hidden'>
                 <img src={'/alok.jpg'} alt='' />
               </span>
@@ -103,9 +101,9 @@ export default function Home() {
               <div className="px-6 py-4 lg:h-52">
                 <span className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Free Course
                 </span>
-                <div className="title-font text-lg font-medium text-gray-900 mb-3">Learn Tailwind In Hindi
+                <div className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Learn Tailwind In Hindi
                 </div>
-                <p className="text-gray-700 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt esse facere recusandae dicta delectus eveniet?
+                <p className="text-gray-700 dark:text-gray-400 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt esse facere recusandae dicta delectus eveniet?
                 </p>
               </div>
               <div className="px-6 pt-4 pb-2">
@@ -113,8 +111,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="lg:p-4 md:w-1/3 flex justify-center mb-3">
-            <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg">
+          <div className="lg:p-4 md:w-1/3 flex justify-center mb-3 ">
+            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 shadow-lg">
               <span className='border-box inline-block overflow-hidden'>
                 <img src={'/alok.jpg'} alt='' />
               </span>
@@ -123,37 +121,37 @@ export default function Home() {
               <div className="px-6 py-4 lg:h-52">
                 <span className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Free Course
                 </span>
-                <div className="title-font text-lg font-medium text-gray-900 mb-3">Learn NextJs In Hindi
+                <div className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Learn Tailwind In Hindi
                 </div>
-                <p className="text-gray-700 text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque quod. Pariatur asperiores consectetur consequuntur.
+                <p className="text-gray-700 dark:text-gray-400 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt esse facere recusandae dicta delectus eveniet?
                 </p>
               </div>
               <div className="px-6 pt-4 pb-2">
-                <span className="inline-block bg-red-500 rounded-full px-3 py-2 text-sm font-semibold text-white mr-2 mb-2 hover:bg-purple-600 cursor-pointer">Read More</span>
+                <span className="inline-block bg-red-500 rounded-full px-3 py-2 text-sm font-semibold text-white mr-2 mb-2 hover:bg-red-600 cursor-pointer">Read More</span>
               </div>
             </div>
           </div>
-          <div className="lg:p-4 md:w-1/3 flex justify-center mb-3">
-            <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg">
+          <div className="lg:p-4 md:w-1/3 flex justify-center mb-3 ">
+            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 shadow-lg">
               <span className='border-box inline-block overflow-hidden'>
-                <img src={'/alok.jpg'}  alt='' />
+                <img src={'/alok.jpg'} alt='' />
               </span>
               <span className='border-box inline-block overflow-hidden ' >
               </span>
               <div className="px-6 py-4 lg:h-52">
                 <span className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Free Course
                 </span>
-                <div className="title-font text-lg font-medium text-gray-900 mb-3">Learn ReactJs In Hindi
+                <div className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Learn Tailwind In Hindi
                 </div>
-                <p className="text-gray-700 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem cumque aspernatur explicabo voluptates ipsam
+                <p className="text-gray-700 dark:text-gray-400 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt esse facere recusandae dicta delectus eveniet?
                 </p>
               </div>
               <div className="px-6 pt-4 pb-2">
-                <span className="inline-block bg-red-500 rounded-full px-3 py-2 text-sm font-semibold text-white mr-2 mb-2 hover:bg-purple-600 cursor-pointer"> Read More
-                </span>
+                <span className="inline-block bg-red-500 rounded-full px-3 py-2 text-sm font-semibold text-white mr-2 mb-2 hover:bg-red-600 cursor-pointer">Read More</span>
               </div>
             </div>
           </div>
+
         </div >
       </div>
 
@@ -165,11 +163,11 @@ export default function Home() {
           <div className="pb-16">
             <div className="flex flex-wrap">
               <div className="text-center mx-auto ">
-                <span className="font-semibold text-lg block mb-2  ">
+                <span className="font-bold text-red-700 text-xl  ">
                   Education &amp; Experience
                 </span>
                 <h2 className="text-5xl font-bold mb-5">My Resume</h2>
-                <p className="md:w-2/3 mb-5 mx-auto text-center text-base text-gray-600 leading-7 font-semibold">
+                <p className="md:w-2/3 mb-5 mx-auto text-center text-base text-gray-600 dark:text-gray-400 leading-7 font-semibold">
                   There are many variations of passages of Lorem Ipsum available
                   but the majority have suffered alteration in some form.
                 </p>
@@ -231,21 +229,20 @@ export default function Home() {
         <div className=''>create amazing products with me?</div>
       </div>
       <div className='px-5 md:flex md:justify-center '>
-        <input type="email" className='duration-150 text-lg focus:outline-none w-52 md:w-60 text-center py-3 px-8 focus:border-red-500 border rounded-full mb-5 md:mb-0' placeholder='Enter Your Email' />
+        <input type="email" className='duration-150 text-black bg-gray-200 text-lg focus:outline-none w-52 md:w-60 text-center py-3 px-8 focus:border-red-500 border rounded-full mb-5 md:mb-0' placeholder='Enter Your Email' />
         <button className='font-semibold px-4 py-5 rounded-full bg-red-500 hover:bg-red-400 duration-300 text-sm text-white cursor-pointer'>Get a Quote</button>
       </div>
       <div>
-        <section className="text-gray-600 body-font">
+        <section className="text-gray-600 dark:text-gray-200 body-font">
           <div className="container px-5 py-14 mx-auto">
-            <h3 className='text-center py-5 font-semibold text-gray-800 text-4xl'>Testimonials</h3>
-            <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
+            <h3 className='text-center py-5 font-semibold text-gray-800 dark:text-white text-4xl'>Testimonials</h3>
+            <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center border rounded-lg p-5">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="inline-block w-8 h-8 text-gray-400 mb-8" viewBox="0 0 975.036 975.036">
                 <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
               </svg>
-              <p className="leading-relaxed text-lg">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy  cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware. Man bun next level coloring book skateboard four loko knausgaard. Kitsch keffiyeh master cleanse direct trade red juice before they sold out gentrify plaid gastropub normcore XOXO 90s pickled cred jean shorts. Slow-carb next level shoreditch ethical authentic, yr scenester sriracha forage franzen organic drinking vinegar.</p>
+              <p className="leading-relaxed text-lg">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy  cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware. Man bun next level coloring book skateboard four loko knausgaard..</p>
               <span className="inline-block h-1 w-10 rounded bg-red-500 mt-8 mb-6"></span>
-              <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">HIMANSHU GOYAL</h2>
-              <p className="text-gray-500"></p>
+              <h2 className="text-gray-900 dark:text-gray-200 font-medium title-font tracking-wider text-sm">HIMANSHU GOYAL</h2>
             </div>
           </div>
         </section>

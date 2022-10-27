@@ -5,7 +5,7 @@ function blog() {
     return (
         <>
             <Head><title>Blog | CodeXalok</title></Head>
-            <section className="text-gray-600 body-font py-5">
+            <section className="body-font py-5">
                 <div className="container px-5 mx-auto">
                     <div className="flex-wrap py-10">
                         <div className="text-center">
@@ -17,8 +17,8 @@ function blog() {
                     </div>
                     <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
                         <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-                            <h2 className="text-gray-900 text-lg title-font font-medium mb-2">The Catalyzer</h2>
-                            <p className="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+                            <h2 className="text-gray-900 dark:text-white text-lg title-font font-medium mb-2">The Catalyzer</h2>
+                            <p className="leading-relaxed text-base dark:text-gray-200">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
                             <a className="mt-3 text-red-500 inline-flex items-center">Learn More
                                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -41,8 +41,8 @@ function blog() {
                             </svg>
                         </div>
                         <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-                            <h2 className="text-gray-900 text-lg title-font font-medium mb-2">The 400 Blows</h2>
-                            <p className="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+                            <h2 className="text-gray-900 dark:text-white text-lg title-font font-medium mb-2">The 400 Blows</h2>
+                            <p className="leading-relaxed text-base dark:text-gray-200">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
                             <a className="mt-3 text-red-500 inline-flex items-center">Learn More
                                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>

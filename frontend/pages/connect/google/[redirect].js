@@ -23,8 +23,8 @@ function Redirect() {
         fetchData()
     }, [router]);
     return (
-        <section class="text-gray-600 body-font min-h-screen">
-            <div class="container px-5 py-24 mx-auto">
+        <section className="text-gray-600 body-font min-h-screen">
+            <div className="container px-5 py-24 mx-auto">
                 <ToastContainer
                     position="top-right"
                     autoClose={5000}
@@ -37,8 +37,8 @@ function Redirect() {
                     pauseOnHover
                     theme="light"
                 />
-                <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
-                    <div class="leading-relaxed text-lg mb-10">
+                <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
+                    <div className="leading-relaxed text-lg mb-10">
                         <h2 className="text-3xl font-semibold mb-5 text-gray-800 md:text-4xl">
                             Welcome to <span className="bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500">CodeXalok</span>
                         </h2>
@@ -47,8 +47,8 @@ function Redirect() {
                             <div style={{ verticalAlign: "inherit" }}>We are fetching your detail please wait...<img src='/assests/spinner.gif' className='w-10 mx-auto' alt=''/></div>
                         </font>
                     </div>
-                    <span class="inline-block h-1 w-10 rounded bg-red-500 my-2"></span>
-                    <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">
+                    <span className="inline-block h-1 w-10 rounded bg-red-500 my-2"></span>
+                    <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
                         <font style={{ verticalAlign: "inherit" }}>
                             <font style={{ verticalAlign: "inherit" }}>CodeXalok</font>
                         </font>

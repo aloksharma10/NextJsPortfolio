@@ -5,6 +5,7 @@ import LoadingBar from 'react-top-loading-bar'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
+import { ThemeProvider } from 'next-themes'
 
 
 function MyApp({ Component, pageProps }) {
@@ -45,16 +46,18 @@ function MyApp({ Component, pageProps }) {
     setLogin(false)
   }
   return <>
-    <LoadingBar
-      color='#f11946'
-      progress={progress}
-      onLoaderFinished={() => setProgress(0)}
-      waitingTime={400}
-      height={3}
-    />
-    <Navbar login={login} key={key} logout={handleLogout} />
-    <Component {...pageProps} login={login} />
-    <Footer />
+    <ThemeProvider attribute='class'>
+      <LoadingBar
+        color='#f11946'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+        waitingTime={400}
+        height={3}
+      />
+      <Navbar login={login} key={key} logout={handleLogout} />
+      <Component {...pageProps} login={login} />
+      <Footer />
+    </ThemeProvider>
   </>
 }
 
