@@ -45,7 +45,6 @@ function Login({ login }) {
       body: JSON.stringify(data)
     })
     let resData = await res.json()
-    console.log(resData)
     if (resData.data == null && resData.jwt == null) {
       toast.error('Invalid Credential!', {
         position: "top-right",

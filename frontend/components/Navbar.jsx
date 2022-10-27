@@ -100,7 +100,13 @@ function Navbar({ login, logout }) {
                   <button className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center  items-center mx-1">Signup</button>
                 </Link>
               </div>
-                : <button onClick={logout} className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1">Logout</button>
+                :
+                <div>
+                  <Link href={'/'}>
+                    <button className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1">Account</button>
+                  </Link>
+                  <button onClick={logout} className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1">Logout</button>
+                </div>
               }
             </div>
           </div>
@@ -117,7 +123,12 @@ function Navbar({ login, logout }) {
                 </Link>
               </div>
                 :
-                <button onClick={logout} className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1">Logout</button>
+                <div>
+                  <Link href={'/'}>
+                    <button className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1">Account</button>
+                  </Link>
+                  <button onClick={logout} className="text-white bg-red-600 hover:bg-red-400 duration-300 focus:ring-2 focus:ring-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1">Logout</button>
+                </div>
               }
             </div>
             <li className="pt-4 text-red-600 font-bold ">
