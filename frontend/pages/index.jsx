@@ -92,7 +92,7 @@ export default function Home() {
             </p>
           </div>
           <div className="lg:p-4 md:w-1/3 flex justify-center mb-3 ">
-            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 shadow-lg">
+            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 dark:shadow-slate-600 shadow-lg">
               <span className='border-box inline-block overflow-hidden'>
                 <img src={'/alok.jpg'} alt='' />
               </span>
@@ -112,7 +112,7 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:p-4 md:w-1/3 flex justify-center mb-3 ">
-            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 shadow-lg">
+            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 dark:shadow-slate-600 shadow-lg">
               <span className='border-box inline-block overflow-hidden'>
                 <img src={'/alok.jpg'} alt='' />
               </span>
@@ -132,7 +132,7 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:p-4 md:w-1/3 flex justify-center mb-3 ">
-            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 shadow-lg">
+            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 dark:shadow-slate-600 shadow-lg">
               <span className='border-box inline-block overflow-hidden'>
                 <img src={'/alok.jpg'} alt='' />
               </span>

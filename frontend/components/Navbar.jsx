@@ -66,7 +66,7 @@ function Navbar({ login, logout }) {
             <Link href="/">CodeXalok</Link>
           </div>
           <div className='flex md:hidden justify-end absolute right-4 md:right-13 items-center'>
-            <div className='mx-2'>
+            <div className='mx-3'>
               {toggleMode()}
             </div>
             <button onClick={() => toggleNav()} className="text-white  bg-red-600 hover:bg-red-600 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center mx-1 ">Menu
@@ -87,7 +87,7 @@ function Navbar({ login, logout }) {
               <li className="mx-2 my-2  hover:border-b-2 hover:border-red-600">
                 <Link href="/contact">Contact</Link>
               </li>
-              <li>
+              <li className='mx-1'>
                 {toggleMode()}
               </li>
             </ul>

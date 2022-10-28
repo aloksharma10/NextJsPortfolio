@@ -6,7 +6,7 @@ function Notes() {
     <> <Head><title>Notes | CodeXalok</title></Head>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
       <div className="p-6  flex justify-center">
-        <div className="w-full dark:bg-slate-900 max-w-sm rounded-lg shadow-lg">
+        <div className="w-full dark:bg-slate-900 max-w-sm rounded-lg shadow-lg dark:shadow-gray-600">
           <div className="flex flex-col items-center p-6 ">
             <img  width={100} className="mb-3 h-24 rounded-full shadow-lg" src="/alok.jpg" alt=""/>
               <h5 className="mb-1 text-xl font-medium  ">C Notes</h5>
