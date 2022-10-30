@@ -79,18 +79,15 @@ export default function Home() {
       </div>
 
 
-      <div>
-        <div className="flex flex-wrap justify-center md:mx-20 mx-10 pt-10 ">
-          <div className="p-5 text-center">
-            <span className="font-bold text-red-700 dark:text-red-600 text-xl">Recent Posts</span>
-            <h2 className=" text-4xl md:text-5xl font-semibold">
-              From The Blog
-            </h2>
-            <p className="md:w-2/3 mb-5 mx-auto text-center text-base text-gray-600  dark:text-gray-400 leading-7 font-semibold">
-              There are many variations of passages of Lorem Ipsum available
-              but the majority have suffered alteration in some form.
-            </p>
-          </div>
+      <div className='container mx-auto'>
+        <div className="p-5 pb-0 text-center">
+          <span className="font-bold text-red-700 dark:text-red-600 text-xl">Recent Posts</span>
+          <h2 className="text-4xl md:text-5xl font-semibold">
+            From The Blog
+          </h2>
+          <p class="md:w-2/4 mb-5 mx-auto text-center text-base text-gray-600 dark:text-gray-400 leading-7 font-semibold">There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.</p>
+        </div>
+        <div className="flex flex-wrap justify-center mx-6 ">
           <div className="lg:p-4 md:w-1/3 flex justify-center mb-3 ">
             <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 dark:shadow-slate-600 shadow-lg">
               <span className='border-box inline-block overflow-hidden'>
@@ -151,11 +148,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-
         </div >
       </div>
-
-
 
       {/* Resume */}
       <section id="education" className="pt-10 z-5 relative">
