@@ -4,7 +4,7 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import { AiOutlineGithub, AiFillTwitterCircle } from 'react-icons/ai';
 import Link from 'next/link';
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <Head>
@@ -81,73 +81,36 @@ export default function Home() {
 
       <div className='container mx-auto'>
         <div className="p-5 pb-0 text-center">
-          <span className="font-bold text-red-700 dark:text-red-600 text-xl">Recent Posts</span>
+          <span className="font-bold text-red-700 dark:text-red-600 text-xl">Recent Post</span>
           <h2 className="text-4xl md:text-5xl font-semibold">
-            From The Blog
+            From The Projects
           </h2>
-          <p class="md:w-2/4 mb-5 mx-auto text-center text-base text-gray-600 dark:text-gray-400 leading-7 font-semibold">There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.</p>
+          <p className="md:w-2/4 mb-5 mx-auto text-center text-base text-gray-600 dark:text-gray-400 leading-7 font-semibold">There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.</p>
         </div>
         <div className="flex flex-wrap justify-center mx-6 ">
-          <div className="lg:p-4 md:w-1/3 flex justify-center mb-3 ">
-            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 dark:shadow-slate-600 shadow-lg">
-              <span className='border-box inline-block overflow-hidden'>
-                <img src={'/alok.jpg'} alt='' />
-              </span>
-              <span className='border-box inline-block overflow-hidden ' >
-              </span>
-              <div className="px-6 py-4 lg:h-52">
-                <span className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Free Course
+
+          {props.fetchData.data.map((items) => {
+            console.log(items.attributes.Image.data.attributes.formats.large.url)
+            return (<div key={items.id} className="lg:p-4 md:w-1/3 flex justify-center mb-3 ">
+              <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 dark:shadow-slate-600 shadow-lg">
+                <span className='border-box inline-block overflow-hidden'>
+                  {/* <img src={`https://aqueous-crag-08640.herokuapp.com${items.attributes.Image.data.attributes.formats.medium.url}`} alt='' className='lg:h-56' /> */}
+                  <img src={`/hero.jpg`} alt='' className='lg:h-56' />
                 </span>
-                <div className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Learn Tailwind In Hindi
-                </div>
-                <p className="text-gray-700 dark:text-gray-400 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt esse facere recusandae dicta delectus eveniet?
-                </p>
-              </div>
-              <div className="px-6 pt-4 pb-2">
-                <span className="inline-block bg-red-500 rounded-full px-3 py-2 text-sm font-semibold text-white mr-2 mb-2 hover:bg-red-600 cursor-pointer">Read More</span>
-              </div>
-            </div>
-          </div>
-          <div className="lg:p-4 md:w-1/3 flex justify-center mb-3 ">
-            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 dark:shadow-slate-600 shadow-lg">
-              <span className='border-box inline-block overflow-hidden'>
-                <img src={'/alok.jpg'} alt='' />
-              </span>
-              <span className='border-box inline-block overflow-hidden ' >
-              </span>
-              <div className="px-6 py-4 lg:h-52">
-                <span className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Free Course
+                <span className='border-box inline-block overflow-hidden ' >
                 </span>
-                <div className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Learn Tailwind In Hindi
+                <div className="px-6 py-4 lg:h-52">
+                  <span className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1 uppercase">Github Project</span>
+                  <div className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">{items.attributes.Title}
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-400 text-base">{items.attributes.Description}</p>
                 </div>
-                <p className="text-gray-700 dark:text-gray-400 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt esse facere recusandae dicta delectus eveniet?
-                </p>
-              </div>
-              <div className="px-6 pt-4 pb-2">
-                <span className="inline-block bg-red-500 rounded-full px-3 py-2 text-sm font-semibold text-white mr-2 mb-2 hover:bg-red-600 cursor-pointer">Read More</span>
-              </div>
-            </div>
-          </div>
-          <div className="lg:p-4 md:w-1/3 flex justify-center mb-3 ">
-            <div className="max-w-sm rounded-2xl overflow-hidden dark:bg-slate-900 dark:shadow-slate-600 shadow-lg">
-              <span className='border-box inline-block overflow-hidden'>
-                <img src={'/alok.jpg'} alt='' />
-              </span>
-              <span className='border-box inline-block overflow-hidden ' >
-              </span>
-              <div className="px-6 py-4 lg:h-52">
-                <span className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Free Course
-                </span>
-                <div className="title-font text-lg font-medium text-gray-900 dark:text-gray-200 mb-3">Learn Tailwind In Hindi
+                <div className="px-6 pb-2 text-right ">
+                  <span className="text-2xl inline-block rounded-full text-red-500 p-2 font-semibold cursor-pointer"><Link href={items.attributes.github}><AiOutlineGithub /></Link></span>
                 </div>
-                <p className="text-gray-700 dark:text-gray-400 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt esse facere recusandae dicta delectus eveniet?
-                </p>
               </div>
-              <div className="px-6 pt-4 pb-2">
-                <span className="inline-block bg-red-500 rounded-full px-3 py-2 text-sm font-semibold text-white mr-2 mb-2 hover:bg-red-600 cursor-pointer">Read More</span>
-              </div>
-            </div>
-          </div>
+            </div>)
+          })}
         </div >
       </div>
 
@@ -244,3 +207,15 @@ export default function Home() {
     </>
   )
 }
+
+// export async function getServerSideProps(context) {
+//   if (typeof window !== 'undefined') {
+//     var token = localStorage.getItem('token');
+//     console.log(token)
+//   }
+//   let d1 = await fetch('http://localhost:1337/api/projects?populate=*')
+//   let fetchData = await d1.json()
+//   return {
+//     props: { fetchData },
+//   }
+// }
