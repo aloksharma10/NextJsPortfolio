@@ -1815,12 +1815,20 @@
     request "^2.83.0"
     url-join "4.0.1"
 
-"@strapi/provider-email-sendmail@4.4.5", "@strapi/provider-email-sendmail@^4.4.5":
+"@strapi/provider-email-sendmail@4.4.5":
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/@strapi/provider-email-sendmail/-/provider-email-sendmail-4.4.5.tgz#b9704f6a517fccbc61952d643b43e1c58c6dae7e"
   integrity sha512-3rwxZpoAjoHMJKnT7m+jaRNeKJDUQkFgLbwMF7xxBSk+Ccp4uyQ9YidEhHIsHoBxjJt3Dm3O1I/VyLHM3YTOKw==
   dependencies:
     "@strapi/utils" "4.4.5"
+    sendmail "^1.6.1"
+
+"@strapi/provider-email-sendmail@^4.9.1":
+  version "4.10.2"
+  resolved "https://registry.yarnpkg.com/@strapi/provider-email-sendmail/-/provider-email-sendmail-4.10.2.tgz#8380b24b8e223804b6150d14ddaf1093bbb769b4"
+  integrity sha512-sdkUEuS/tFhXvGLcHnowPVpDnuFIzFYYh+YyExNKiE37/W3/e9w0jHlJZD98MQlxJJblyBR9chdqfrznV8tm5Q==
+  dependencies:
+    "@strapi/utils" "4.10.2"
     sendmail "^1.6.1"
 
 "@strapi/provider-upload-local@4.4.5":
@@ -1901,6 +1909,18 @@
     lodash "4.17.21"
     prettier "2.7.1"
     typescript "4.6.2"
+
+"@strapi/utils@4.10.2":
+  version "4.10.2"
+  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.10.2.tgz#cf804424f037de71a6467c4125181044396f8f5b"
+  integrity sha512-vf3fXtOK26hDjQq8+fv/PpvEjeVBUaD9cI8k7j8aSz3A1DY8BYL0KDBX/Gm9T55b0Lzxwz39zURA1+pQquxsFg==
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    date-fns "2.29.3"
+    http-errors "1.8.1"
+    lodash "4.17.21"
+    p-map "4.0.0"
+    yup "0.32.9"
 
 "@strapi/utils@4.4.5":
   version "4.4.5"
@@ -3813,6 +3833,11 @@ date-fns@2.29.2:
   version "2.29.2"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.2.tgz#0d4b3d0f3dff0f920820a070920f0d9662c51931"
   integrity sha512-0VNbwmWJDS/G3ySwFSJA3ayhbURMTJLtwM2DTxf9CWondCnh6DTNlO9JgRSq6ibf4eD0lfMJNBxUdEAHHix+bA==
+
+date-fns@2.29.3:
+  version "2.29.3"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
+  integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
